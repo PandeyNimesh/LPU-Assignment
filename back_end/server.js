@@ -12,10 +12,11 @@ const app = express();
 
 app.use(
   cors({
-    origin:['http://localhost:5173','https://lpu-assignment-qsnp.vercel.app/'], 
-    credentials: true, // Allow cookies and credentials
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow these methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Ensure headers are allowed
+    origin: ['http://localhost:5173', 'https://lpu-assignment-qsnp.vercel.app'],
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    exposedHeaders: ['Content-Length', 'Authorization'],
   })
 );
 // Handle OPTIONS preflight requests
@@ -44,5 +45,3 @@ app.use("/api/v1/users", router);
 // Import hospital router
 import hospitalRouter from "./routes/hospital.routes.js";
 app.use("/api/v1/hospitals", hospitalRouter);
-
-
