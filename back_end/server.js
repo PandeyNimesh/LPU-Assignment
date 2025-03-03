@@ -12,7 +12,7 @@ const app = express();
 
 app.use(
   cors({
-    origin:['http://localhost:5173','https://fullstackecommercewebapp-1-front-end.onrender.com'], 
+    origin:['http://localhost:5173','https://lpu-assignment-qsnp.vercel.app/'], 
     credentials: true, // Allow cookies and credentials
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow these methods
     allowedHeaders: ['Content-Type', 'Authorization'], // Ensure headers are allowed
