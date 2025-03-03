@@ -40,8 +40,8 @@ app.use(bodyParser.json({ limit: "16mb" }));
 
 //Import user router
 import { router } from "./routes/user.routes.js";
-app.use("/api/v1/users", router);
+app.use("api/v1/users", router);
 
 // Import hospital router
 import hospitalRouter from "./routes/hospital.routes.js";
-app.use("/api/v1/hospitals", hospitalRouter);
+app.use("api/v1/hospitals", hospitalRouter);
