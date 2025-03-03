@@ -12,7 +12,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'https://lpu-assignment-qsnp.vercel.app/'],
+    origin: ['http://localhost:5173', 'https://lpu-assignment-qsnp.vercel.app'],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
@@ -40,8 +40,8 @@ app.use(bodyParser.json({ limit: "16mb" }));
 
 //Import user router
 import { router } from "./routes/user.routes.js";
-app.use("api/v1/users", router);
+app.use("/api/v1/users", router);
 
 // Import hospital router
 import hospitalRouter from "./routes/hospital.routes.js";
-app.use("api/v1/hospitals", hospitalRouter);
+app.use("/api/v1/hospitals", hospitalRouter);
